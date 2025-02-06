@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fk5r2u038-java-springboot-gitops
+  description: This is GitOps manifest for fk5r2u038-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=fk5r2u038-java-springboot
+    backstage.io/kubernetes-id: fk5r2u038-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: fk5r2u038-java-springboot   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fk5r2u038-java-springboot
